@@ -1,2 +1,2 @@
-# Projects-01
- Project-Watch
+# Digital-Clock
+ Digital-Clock with JavaScript
