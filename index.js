@@ -22,7 +22,7 @@ window.onload = function(){
         let date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
         document.getElementById("date").innerHTML = date;
         
-        let time = setTimeout(function(){ startTime() }, 500);
+        setTimeout(function(){ startTime() }, 500);
     }
     function checkTime(i) {
         if (i < 10) {
