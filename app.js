@@ -1,4 +1,5 @@
-window.onload = function(){
+    let isStopped = false;
+
     function startTime() {
         let today = new Date();
         let hr = today.getHours();
@@ -21,8 +22,8 @@ window.onload = function(){
         let curYear = today.getFullYear();
         let date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
         document.getElementById("date").innerHTML = date;
-        
-        setTimeout(function(){ startTime() }, 500);
+
+        myTimeout = setTimeout(startTime, 500);
     }
     function checkTime(i) {
         if (i < 10) {
@@ -30,5 +31,22 @@ window.onload = function(){
         }
         return i;
     }
+
+    function forceStopTime() {
+        if(isStopped) {
+            startTime();
+            document.getElementById("btn").innerHTML="Durdur";
+        } else {
+            clearTimeout(myTimeout);
+            document.getElementById("btn").innerHTML="Başlat";
+        }
+        isStopped = !isStopped
+
+    }
+
     startTime();
-}
+    
+
+    
+
+
